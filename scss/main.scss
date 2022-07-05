@@ -213,6 +213,10 @@ $active-color: #8302FB;
             }
 
         }
+
+        .owl-dots {
+            bottom: -30px !important;
+        }
     }
 }
 
@@ -441,4 +445,205 @@ $active-color: #8302FB;
             }
         }
     }
+}
+
+.burger {
+    display: none;
+}
+
+@media screen and (max-width: 1500px) {
+    .main {
+        background-size: 113%;
+        background-position: 0px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .main {
+        background-size: 120%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main {
+        background-size: 150%;
+        background-position: -180px;
+
+        .info {
+            gap: 34px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .burger {
+        display: block;
+        text-align: right;
+    }
+    
+    .header {
+        .menu-dn {
+            display: none;
+        }
+
+        .cart {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+    }
+
+    .main {
+        background-size: 190%;
+        background-position: -320px;
+
+        .actions {
+            gap: 25px;
+        }
+
+        .info {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main {
+        padding: 42px 0 50px 0;
+        background: url(../img/main-bg-mobile.png) no-repeat top right / contain;
+        background-size: 170%;
+        background-position: 40px -30px;
+
+        .sub-title {
+            font-size: 20px;
+            line-height: 23px;
+            width: 145px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 32px;
+            line-height: 38px;
+            width: 210px;
+        }
+
+        .text {
+            width: 185px;
+        }
+
+        .actions {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    .advantages {
+        .advantages-slider {
+            .item {
+                .title {
+                    font-size: 15.5px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .games {
+        .item {
+            .top {
+                height: 227px;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .bottom {
+                height: 66px;
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+    }
+
+    .mobile-games {
+        padding-top: 70px !important;
+
+        .big-disc {
+            right: 15px;
+        }
+
+        .small-disc {
+            left: 20px;
+            top: 120px;
+        }
+    }
+
+    .computer-games {
+        .big-disc {
+            top: 34px;
+            left: 15px;
+            right: auto;
+        }
+
+        .small-disc {
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            top: 230px;
+        }
+    }
+
+    .statistic {
+        .wrapper {
+            .title {
+                width: 100%;
+            }
+    
+            .text {
+                width: 100%;
+            }
+        }
+    }
+
+    .footer {
+        .wrapper {
+            justify-content: flex-start;
+            gap: 46px;
+
+            .left {
+                display: none;
+            }
+
+            .center {
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                width: 47px;
+                margin: 0;
+            }
+
+            .right {
+                .title {
+                    display: none;
+                }
+
+                ul {
+                    li {
+                        line-height: 27px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .credits {
+            margin-top: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+
 }

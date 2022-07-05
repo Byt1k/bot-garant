@@ -4,12 +4,15 @@ $('.advantages-slider').owlCarousel({
     nav: false,
     dots: true,
     responsive:{
-        // 0:{
-        //     items:1
-        // },
-        // 600:{
-        //     items:3
-        // },
+        0:{
+            items:1
+        },
+        768:{
+            items:1.5
+        },
+        992:{
+            items:2
+        },
         1200:{
             items:3
         }
@@ -22,12 +25,16 @@ const games = {
     nav: false,
     dots: true,
     responsive:{
-        // 0:{
-        //     items:1
-        // },
-        // 600:{
-        //     items:3
-        // },
+        0:{
+            items:2,
+            margin:12
+        },
+        768:{
+            items:2,
+        },
+        992:{
+            items:3
+        },
         1200:{
             items:4
         }
