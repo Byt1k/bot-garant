@@ -669,7 +669,56 @@ $active-color: #8302FB;
 }
 
 
+// Мобильное меню
 
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    background-color: #121826;
+    z-index: 9999;
+    transition: all .3s ease;
+
+    &.active {
+        right: 0;
+    }
+
+    .col-12 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 20px 0;
+        min-height: 100vh;
+
+        .close {
+            position: absolute;
+            top: 17px;
+            right: 23px;
+        }
+
+        ul {
+            position: absolute;
+            right: 20px;
+            top: 145px;
+
+            li {
+                text-align: right;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: right;
+                color: #939393;
+                margin-bottom: 17px;
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
 
 
 
@@ -719,6 +768,10 @@ $active-color: #8302FB;
 }
 
 @media screen and (max-width: 992px) {
+    .mobile-menu {
+        display: flex;
+    }
+
     .burger {
         display: block;
         text-align: right;

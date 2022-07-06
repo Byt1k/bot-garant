@@ -102,3 +102,26 @@ basketItems.forEach(i => {
         // }
     })
 })
+
+
+const burger = document.querySelector('.burger img')
+const mobileMenu = document.querySelector('.mobile-menu')
+const closeMobileMenu = document.querySelector('.mobile-menu .close')
+const mobileMenuItems = document.querySelectorAll('.mobile-menu ul li a')
+console.log(mobileMenuItems);
+
+burger.addEventListener('click', () => {
+    mobileMenu.classList.add('active')
+})
+
+closeMobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('active')
+})
+
+mobileMenuItems.forEach(i => {
+    i.addEventListener('click', () => {
+        mobileMenu.classList.remove('active')
+    })
+})
+
+
