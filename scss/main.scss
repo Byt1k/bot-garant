@@ -451,6 +451,236 @@ $active-color: #8302FB;
     display: none;
 }
 
+
+// Каталог
+
+.catalog, .basket {
+    .title {
+        margin: 40px 0 45px 0;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        color: $active-color;
+        text-transform: uppercase;
+    }
+}
+
+.catalog {
+    background: url(../img/catalog-bg.svg) no-repeat center top / cover;
+
+    .item {
+        margin-bottom: 57px;
+        background: #121826;
+
+        .top {
+            width: 100%;
+            height: 370px;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .info {
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 120px;
+                background: linear-gradient(180deg, rgba(24, 30, 44, 0) 0%, rgba(24, 30, 44, 0.5) 41.46%, #181E2C 100%);
+                padding: 20px 20px 10px 20px;
+                
+                .head {
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-transform: uppercase;
+                    margin-bottom: 5px;
+                }
+
+                .price {
+                    position: absolute;
+                    right: 20px;
+                    bottom: 10px;
+                    margin-top: -5px;
+                    text-align: right;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 23px;
+                }
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            height: 115px;
+            position: relative;
+            background: #181E2C;
+            box-shadow: 0px 5px 20px #0C101B;
+            border-radius: 0px 0px 8px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .line {
+                width: 54%;
+                height: 2px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: $active-color;
+            }
+
+            .btn-add {
+                @extend %main-btn;
+                text-transform: uppercase;
+            }
+
+            .select-count {
+                display: none;
+            }
+
+            &.active {
+                .btn-add {
+                    display: none;
+                }
+
+                .select-count {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+.select-count {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+
+    .left {
+        display: flex;
+        align-items: flex-end;
+        font-size: 16px;
+    }
+
+    .right {
+        display: flex;
+        gap: 15px;
+
+        button {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #8302FB;
+            border-radius: 8px;
+            transition: all .3s ease;
+
+            &:hover {
+                background: $active-color;
+
+                svg path {
+                    transition: all .3s ease;
+                    fill: #181E2C;
+                }
+            }
+        }
+    }
+}
+
+
+// Корзина
+
+.basket {
+    background: url(../img/basket-bg.svg) no-repeat center top / cover;
+    transition: all .3s ease;
+    padding-bottom: 57px;
+    
+    .item {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        height: 100px;
+        background: #181E2C;
+        box-shadow: 0px 5px 20px #0C101B;
+        border-radius: 8px;
+
+        > .left {
+            height: 100%;
+            width: 145px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 8px 0 0 8px;
+                object-fit: cover;
+            }
+        }
+
+        > .right {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            .info {
+                .head {
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+
+                .text {
+                    margin-top: 10px;
+                    width: 400px;
+                }
+            }
+
+            .select-count {
+                width: auto;
+                display: flex;
+                gap: 140px;
+                margin-left: auto;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 48px;
+
+        .btn {
+            @extend %main-btn;
+            width: 232px;
+            height: 50px;
+        }
+    }
+
+    .basket-empty {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1500px) {
     .main {
         background-size: 113%;
@@ -471,6 +701,19 @@ $active-color: #8302FB;
 
         .info {
             gap: 34px;
+        }
+    }
+
+
+    // Корзина 
+
+    .basket {
+        .item {
+            .right {
+                .select-count {
+                    gap: 70px;
+                }
+            }
         }
     }
 }
@@ -502,6 +745,29 @@ $active-color: #8302FB;
 
         .info {
             display: none;
+        }
+    }
+
+
+    // Корзина 
+
+    .basket {
+        .item {
+            > .left {
+                min-width: 145px;
+            }
+
+            > .right {
+                .info {
+                    .text {
+                        width: 270px;
+                    }
+                }
+
+                .select-count {
+                    gap: 25px;
+                }
+            }
         }
     }
 }
@@ -640,6 +906,91 @@ $active-color: #8302FB;
 
         .credits {
             margin-top: 12px;
+        }
+    }
+
+
+    // Каталог
+
+    .catalog {
+        background: url(../img/catalog-bg-mobile.svg) no-repeat center top / contain;
+        
+        // .item {
+        //     .top {
+        //         // height: 210px;
+
+        //         .info {
+        //             padding: 5px 10px;
+        //             height: 70px;
+
+        //             .head {
+        //                 font-size: 14px;
+        //                 line-height: 16px;
+        //                 margin-bottom: 3px;
+        //             }
+
+        //             .text {
+        //                 font-size: 10px;
+        //                 line-height: 12px;
+        //             }
+
+        //             .price {
+        //                 bottom: 7px;
+        //                 right: 10px;
+        //             }
+        //         }
+        //     }
+
+        //     .bottom {
+        //         // height: 66px;
+        //     }
+        // }
+    }
+
+    .basket {
+        .item {
+            flex-direction: column;
+            height: auto;
+            
+            > .left {
+                height: 160px;
+                width: 100%;
+
+                img {
+                    border-radius: 8px 8px 0 0;
+                }
+            }
+
+            > .right {
+                width: 100%;
+                height: 165px;
+                padding: 0 10px;
+                position: relative;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                .info {
+                    .text {
+                        width: 100%;
+                    }
+                }
+
+                .select-count {
+                    padding: 0 10px;
+                    width: 100%;
+                    justify-content: space-between;
+                    position: absolute;
+                    bottom: 20px;
+                    right: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        .actions {
+            flex-direction: column;
+            align-items: center;
         }
     }
 }
